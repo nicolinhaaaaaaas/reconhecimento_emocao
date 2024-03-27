@@ -1,0 +1,12 @@
+streamlit==0.87.0
+click>=7.0,<8.0
+tensorflow==2.12.1
+numpy>=1.22,<1.24.3
+pandas
+matplotlib
+scikit-learn
+opencv-contrib-python-headless
+mediapipe
+streamlit_webrtc
+tensorflow-cpu
+keras~=2.12.0
