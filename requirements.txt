@@ -1,6 +1,5 @@
 streamlit
 click>=7.0,<8.0
-tensorflow==2.12.1
 numpy>=1.22,<1.24.3
 pandas
 matplotlib
@@ -10,3 +9,4 @@ mediapipe
 streamlit_webrtc
 tensorflow-cpu
 keras~=2.12.0
+tensorflow==2.12.1

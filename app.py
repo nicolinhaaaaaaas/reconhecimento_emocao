@@ -9,7 +9,7 @@ from tensorflow.keras.preprocessing.image import img_to_array
 
 
 # load model
-emotion_dict = {0:'angry', 1:'disgust', 2:'fear', 3 :'happy', 4: 'neutral', 5:'sad', 6: 'surprise'}
+emotion_dict = {0:'Raiva', 1:'Nojo', 2:'Medo', 3 :'Feliz', 4: 'Neutro', 5:'Triste', 6: 'Surpresa'}
 # load json and create model
 json_file = open('modelo\emotion_modelcnn90valAcc.json', 'r')
 loaded_model_json = json_file.read()
