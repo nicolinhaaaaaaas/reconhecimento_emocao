@@ -9,13 +9,13 @@ from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfigura
 # load model
 emotion_dict = {0:'angry', 1:'disgust', 2:'fear', 3 :'happy', 4: 'neutral', 5:'sad', 6: 'surprise'}
 # load json and create model
-json_file = open('emotion_modelcnn99acc.json', 'r')
+json_file = open('modelo\emotion_modelcnn90valAcc.json', 'r')
 loaded_model_json = json_file.read()
 json_file.close()
 classifier = model_from_json(loaded_model_json)
 
 # load weights into new model
-classifier.load_weights("modelo_cnn99acc.h5")
+classifier.load_weights("modelo\modelo_cnn90valAcc..h5")
 
 #load face
 try:
