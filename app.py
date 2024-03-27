@@ -5,6 +5,8 @@ from tensorflow import keras
 from keras.models import model_from_json
 from keras.preprocessing import image
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase, RTCConfiguration, VideoProcessorBase, WebRtcMode
+from tensorflow.keras.preprocessing.image import img_to_array
+
 
 # load model
 emotion_dict = {0:'angry', 1:'disgust', 2:'fear', 3 :'happy', 4: 'neutral', 5:'sad', 6: 'surprise'}
@@ -16,6 +18,14 @@ classifier = model_from_json(loaded_model_json)
 
 # load weights into new model
 classifier.load_weights("modelo\modelo_cnn90valAcc..h5")
+
+#load face
+try:
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+except Exception:
+    st.write("Error loading cascade classifiers")
+
+RTC_CONFIGURATION = RTCConfiguration({"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]})
 
 #load face
 try:
@@ -40,7 +50,7 @@ class Faceemotion(VideoTransformerBase):
             roi_gray = cv2.resize(roi_gray, (48, 48), interpolation=cv2.INTER_AREA)
             if np.sum([roi_gray]) != 0:
                 roi = roi_gray.astype('float') / 255.0
-                roi = image.img_to_array(roi)
+                roi = img_to_array(roi)
                 roi = np.expand_dims(roi, axis=0)
                 prediction = classifier.predict(roi)[0]
                 maxindex = int(np.argmax(prediction))
@@ -50,7 +60,7 @@ class Faceemotion(VideoTransformerBase):
             cv2.putText(img, output, label_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         return img
-
+    
 def main():
     # Face Analysis Application #
     st.title("Reconhecimento de Expressões Faciais em tempo real")
