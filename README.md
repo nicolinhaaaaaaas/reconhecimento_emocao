@@ -10,7 +10,7 @@
 
 ---
 
-Este é um sistema de reconhecimento de expressões fasciais / emoções desenvolvido em Python utilizando OpenCV. O sistema utiliza técnicas de Processamento de Imagem e Machine Learning para identificar diferentes tipos de expressões faciais em uma imagem.
+Este é um sistema de reconhecimento de expressões faciais / emoções desenvolvido em Python utilizando OpenCV. O sistema utiliza técnicas de Processamento de Imagem e Machine Learning para identificar diferentes tipos de expressões faciais em uma imagem.
 
 ## Funcionalidades Principais
 
@@ -24,7 +24,7 @@ Este é um sistema de reconhecimento de expressões fasciais / emoções desenvo
 
 - Python 3.x
 - OpenCV
-- Bibliotecas Python: NumPy, scikit-learn, etc. (detalhes podem ser encontrados no arquivo requirements.txt)
+- Bibliotecas Python: NumPy, Streamlit, scikit-learn, etc. (detalhes podem ser encontrados no arquivo requirements.txt)
 
 ## Instalação
 
@@ -51,10 +51,12 @@ pip install -r requirements.txt
 1. Execute o script principal do sistema:
 
 ```bash
-python main.py
+streamlit run app.py
 ```
 
-// A FAZER
+2. Vá para a barra esquerda de funções e selecione "Reconhecimento de face por Webcam".
+
+3. Aperte o botão "Start" e teste seus resultados.
 
 ## Contribuição
 
@@ -104,5 +106,7 @@ Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licens
 
 ## Agradecimentos
 
-Agradecemos aos desenvolvedores e à comunidade de código aberto que contribuíram com ferramentas como OpenCV e scikit-learn, que tornaram possível o desenvolvimento deste sistema de identificação de Expressões Faciais.
+Link do dataset utilizado [FER-2013](https://www.kaggle.com/datasets/msambare/fer2013)
+
+Agradecemos aos desenvolvedores e à comunidade de código aberto que contribuíram com ferramentas como OpenCV, scikit-learn e Streamlit que tornaram possível o desenvolvimento deste sistema de identificação de Expressões Faciais.
 @@ -65,4 +110,3 @@ Este projeto está licenciado sob a [Licença MIT](https://opensource.org/license)
